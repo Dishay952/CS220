@@ -1,15 +1,12 @@
-`timescale 1ns / 1ns
-`include "TwoToFourDecoder.v"
+`timescale 1ns/1ns
+`include "two_to_four.v"
 
-module TwoToFourDecoder_tb;
+module two_to_four_tb;
 wire enable, A0, A1;
 integer i;
 wire Y3,Y2,Y1,Y0;
-TwoToFourDecoder_tb uut(A1,A0,enable,Y3,Y2,Y1,Y0);
+two_to_four uut(A1,A0,enable,Y3,Y2,Y1,Y0);
 initial begin
-    $dumpfile("TwoToFourDecoder_tb.vcd");
-    $dumpvars(0, TwoToFourDecoder_tb);
-    //ABCD two_to_four(A1,A0,enable,Y3,Y2,Y1,Y0);
     A0<=0;
     A1<=0;
     enable<=0;
