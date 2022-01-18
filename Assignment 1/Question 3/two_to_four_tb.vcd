@@ -1,5 +1,5 @@
 $date
-	Tue Jan 18 17:28:36 2022
+	Tue Jan 18 21:57:54 2022
 $end
 $version
 	Icarus Verilog
@@ -15,10 +15,13 @@ $var wire 1 $ Y0 $end
 $var reg 1 % A0 $end
 $var reg 1 & A1 $end
 $var reg 1 ' enable $end
-$var integer 32 ( i [31:0] $end
 $scope module uut $end
 $var wire 1 % A0 $end
 $var wire 1 & A1 $end
+$var wire 1 ( C0 $end
+$var wire 1 ) C1 $end
+$var wire 1 * C2 $end
+$var wire 1 + C3 $end
 $var wire 1 ' enable $end
 $var reg 1 $ Y0 $end
 $var reg 1 # Y1 $end
@@ -29,47 +32,33 @@ $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b0 (
-0'
+0+
+0*
+0)
+1(
+1'
 0&
 0%
-0$
+1$
 0#
 0"
 0!
 $end
-#5
-b1 (
-#10
+#100
+0(
+1)
 1%
-b10 (
-#15
-1&
-0%
-b11 (
-#20
-1%
-b100 (
-#25
-1$
-1'
-0&
-0%
-b101 (
-#30
+#300
+1*
+0)
 0$
 1#
-1%
-b110 (
-#35
-0#
-1"
 1&
 0%
-b111 (
-#40
-0"
-1!
+#600
+0*
+1+
+0#
+1"
 1%
-b1000 (
-#90
+#2000
