@@ -1,4 +1,4 @@
-`timescale 1ns/1ns
+`timescale 1ns/1ps
 `include "two_to_four.v"
 
 module two_to_four_tb;
@@ -10,7 +10,7 @@ initial begin
     $dumpfile("two_to_four_tb.vcd");
     $dumpvars(0, two_to_four_tb);
     enable<=1'b1;
-    $monitor("A1=%0b A0=%0b Enable=%0b Y3=%0b Y2=%0b Y1=%0b Y0=%0b", A1,A0,enable,Y3,Y2,Y1,Y0);
+    $monitor("%t A1=%0b A0=%0b Enable=%0b Y3=%0b Y2=%0b Y1=%0b Y0=%0b", $time,A1,A0,enable,Y3,Y2,Y1,Y0);
     #2000 $display("Test complete");
 end
 initial begin

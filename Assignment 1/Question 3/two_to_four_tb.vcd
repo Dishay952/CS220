@@ -1,11 +1,11 @@
 $date
-	Wed Jan 19 00:20:57 2022
+	Wed Jan 19 00:33:53 2022
 $end
 $version
 	Icarus Verilog
 $end
 $timescale
-	1ns
+	1ps
 $end
 $scope module two_to_four_tb $end
 $var wire 1 ! Y3 $end
@@ -44,14 +44,14 @@ x#
 x"
 x!
 $end
-#100
+#100000
 1(
 0*
 0+
 0)
 0&
 0%
-#200
+#200000
 0(
 1)
 1$
@@ -59,17 +59,17 @@ $end
 0"
 0!
 1%
-#300
+#300000
 1*
 0)
 0$
 1#
 1&
 0%
-#400
+#400000
 0*
 1+
 0#
 1"
 1%
-#2000
+#2000000
