@@ -19,4 +19,8 @@ module two_to_four(input A1, A0, enable,
             Y1<= ~A1&A0;
             Y0<= (~A1)&(~A0);
         end
-endmodule;
+endmodule; 
+
+/*
+module two_to_four(A1,A0,E,Y3,Y2,Y1,Y0) aisa kar then input and output likh re
+*/
