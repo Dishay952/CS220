@@ -27,7 +27,7 @@ and a1(C3,A1,A0);
 and a2(C2,A1,nA0);
 and a3(C1,nA1,A0);
 and a4(C0,nA1,nA0);
-always @(A1,A0,enable)
+always @(*)
     if(enable==0)
         begin
             Y3<=1'b0;

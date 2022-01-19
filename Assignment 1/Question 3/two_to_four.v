@@ -13,19 +13,19 @@ assign C3=A1&A0;
 assign C2=A1&(~A0);
 assign C1=A0&(~A1);
 assign C0=(~A1)&(~A0);
-always @(A1,A0,enable)
+always @(*)
     if(enable==0)
         begin
-            Y3=1'b0;
-            Y2=1'b0;
-            Y1=1'b0;
-            Y0=1'b0;
+            Y3<=1'b0;
+            Y2<=1'b0;
+            Y1<=1'b0;
+            Y0<=1'b0;
         end 
     else 
         begin
-            Y3=C3;
-            Y2=C2;
-            Y1=C1;
-            Y0=C0;
+            Y3<=C3;
+            Y2<=C2;
+            Y1<=C1;
+            Y0<=C0;
         end
 endmodule
