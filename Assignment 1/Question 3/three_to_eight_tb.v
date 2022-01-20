@@ -13,11 +13,11 @@ initial begin
     A1<=1'b0;
     A2<=1'b0;
     enable<=1'b0;
-    $monitor("Enable=%0b A2=%0b A1=%0b A0=%0b Y7=%0b Y6=%0b Y5=%0b Y4=%0b Y3=%0b Y2=%0b Y1=%0b Y0=%0b",enable, A2,A1,A0,Y7,Y6,Y5,Y4,Y3,Y2,Y1,Y0);
+    $monitor("%t Enable=%0b A2=%0b A1=%0b A0=%0b Y7=%0b Y6=%0b Y5=%0b Y4=%0b Y3=%0b Y2=%0b Y1=%0b Y0=%0b",$time,enable, A2,A1,A0,Y7,Y6,Y5,Y4,Y3,Y2,Y1,Y0);
     for(i=0;i<16;i=i+1) begin
-        #10 {enable,A2,A1,A0}=i;
+        #5 {enable,A2,A1,A0}=i;
     end
-    #170 $display("Test complete");
+    #85 $display("Test complete");
 end
 
 endmodule 
