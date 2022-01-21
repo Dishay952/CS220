@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
-`include "PEn_8_3.v"
-module PEn_8_3_tb;
+`include "A1Q4_eight_to_three_priority_encoder.v"
+module eight_to_three_priority_encoder_tb;
 reg [7:0] D;
 wire [2:0] Y;
 PEn_8_3 uut(D,Y);

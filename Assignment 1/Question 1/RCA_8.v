@@ -1,4 +1,4 @@
-`include "adder.v"
+`include "one_bit_full_adder.v"
 
 module RCA_8(C_out,S,A,B,C_in);
     input [7:0] A;

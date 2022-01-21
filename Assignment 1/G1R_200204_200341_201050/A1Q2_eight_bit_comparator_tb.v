@@ -1,11 +1,11 @@
 `timescale 1ns/1ns
-`include "comparator_8.v"
-module comparator_8_tb;
+`include "A1Q2_eight_bit_comparator.v"
+module eight_bit_comparator_tb;
 reg [7:0] A;
 reg [7:0] B;
 wire e,g,l;
 integer i,j;
-comparator_8 c(A,B,e,g,l);
+eight_bit_comparator c(A,B,e,g,l);
 initial begin
     #5;
     $monitor("%t A=%b, B=%b, E=%b, G=%b, L=%b",$time,A,B,e,g,l);
