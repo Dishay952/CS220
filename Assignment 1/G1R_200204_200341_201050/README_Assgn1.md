@@ -26,6 +26,6 @@
 
 ## Question 4: 8-to-3 Priority Encoder
 
-> 'A1Q4_eight_to_three_priotity_encoder.v' contains the implementation of a 2-to-4 encoder which is then used to create a 3-to-8 encoder. This is done by using 3 decoders. 
+> 'A1Q4_eight_to_three_priotity_encoder.v' contains the implementation of a 2-to-4 encoder which is then used to create a 3-to-8 encoder. This is done by using 3 encoders. 
 > <br>
 > 'A1Q4_eight_to_three_priotity_encoder_tb.v' is the testbench with all possible inputs.
