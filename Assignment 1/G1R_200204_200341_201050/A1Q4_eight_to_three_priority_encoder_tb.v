@@ -3,7 +3,7 @@
 module eight_to_three_priority_encoder_tb;
 reg [7:0] D;
 wire [2:0] Y;
-PEn_8_3 uut(D,Y);
+eight_to_three_priority_encoder uut(D,Y);
 initial begin
     #5;
     $monitor("%t D=%b Y=%b",$time,D,Y);
