@@ -2,30 +2,30 @@
 
 ## Question 1: 8-bit Ripple Carry Adder
 
-> 'adder.v' is the implementation of a 1-bit full adder. 
+> 'A1Q1_one_bit_full_adder.v' is the implementation of a 1-bit full adder. 
 > <br>
-> 'RCA_8.v' is the implementation of a 8-bit ripple carry adder using the 1-bit full adder described above.
+> 'A1Q1_eight_bit_ripple_carry_adder.v' is the implementation of a 8-bit ripple carry adder using the 1-bit full adder described above.
 > <br>
-> 'RCA_8_tb.v' is the testbench with 15 inputs.
+> 'A1Q1_eight_bit_ripple_carry_adder_tb.v' is the testbench with 15 inputs.
 > <br>
 
 ## Question 2: 8-bit Comparator
 
-> 'comparator.v' is the implementation of a 1-bit comparator. 
+> 'A1Q2_one_bit_comparator.v' is the implementation of a 1-bit comparator. 
 > <br>
-> 'comparator_8.v' is the implementation of a 8-bit comparator using the 1-bit comparator described above.
+> 'A1Q2_eight_bit_comparator.v' is the implementation of a 8-bit comparator using the 1-bit comparator described above.
 > <br>
-> 'comparator_8_tb.v' is the testbench with 15 inputs.
+> 'A1Q2_eight_bit_comparator_tb.v' is the testbench with 15 inputs.
 
 
 ## Question 3: 3-to-8 Decoder
 
-> 'three_to_eight.v' contains the implementation of a 2-to-4 encoder which is then used to create a 3-to-8 encoder. This is done by using 3 decoders. 
+> 'A1Q3_three_to_eight_decoder.v' contains the implementation of a 2-to-4 encoder which is then used to create a 3-to-8 encoder. This is done by using 3 decoders. 
 > <br>
-> 'three_to_eight_tb.v' is the testbench with all possible inputs.
+> 'A1Q3_three_to_eight_decoder_tb.v' is the testbench with all possible inputs.
 
 ## Question 4: 8-to-3 Priority Encoder
 
-> 'three_to_eight.v' contains the implementation of a 2-to-4 encoder which is then used to create a 3-to-8 encoder. This is done by using 3 decoders. 
+> 'A1Q4_eight_to_three_priotity_encoder.v' contains the implementation of a 2-to-4 encoder which is then used to create a 3-to-8 encoder. This is done by using 3 decoders. 
 > <br>
-> 'three_to_eight_tb.v' is the testbench with all possible inputs.
+> 'A1Q4_eight_to_three_priotity_encoder_tb.v' is the testbench with all possible inputs.
