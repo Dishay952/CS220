@@ -12,12 +12,13 @@ initial begin
     $monitor("%t A=%b, B=%b, E=%b, G=%b, L=%b",$time,A,B,e,g,l);
 end
 initial begin 
-    for(i=0;i<16;i=i+1) begin 
+    for(i=0;i<15;i=i+1) begin 
         #5 A<=i;
     end
+    #5 A<=10;B<=10;
 end
 initial begin 
-    for(j=15;j>=0;j=j-1) begin 
+    for(j=14;j>=0;j=j-1) begin 
         #5 B<=j;
     end
 end
