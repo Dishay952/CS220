@@ -7,8 +7,6 @@ integer i;
 wire Y7,Y6,Y5,Y4,Y3,Y2,Y1,Y0;
 three_to_eight_decoder uut(A2,A1,A0,enable,Y7,Y6,Y5,Y4,Y3,Y2,Y1,Y0);
 initial begin
-    $dumpfile("A1Q3_three_to_eight_decoder_tb.vcd");
-    $dumpvars(0, three_to_eight_decoder_tb);
     A0<=1'b0;
     A1<=1'b0;
     A2<=1'b0;
@@ -18,7 +16,6 @@ initial begin
     for(i=0;i<16;i=i+1) begin
         #5 {enable,A2,A1,A0}=i;
     end
-    #85 $display("Test complete");
 end
 
 endmodule 

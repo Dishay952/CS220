@@ -10,8 +10,6 @@ integer i;
 integer j;
 eight_bit_ripple_carry_adder uut(C_out,S,A,B,C_in);
 initial begin
-    $dumpfile("A1Q1_eight_bit_ripple_carry_adder.vcd");
-    $dumpvars(0, A1Q1_eight_bit_ripple_carry_adder_tb);
     A<=8'b0;
     B<=8'b0;
     C_in<=1'b0;
