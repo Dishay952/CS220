@@ -1,22 +1,16 @@
-module JohnsonCounter();
-    Clock(clk)
-    D_FF D0(q1,~q8,clk,reset);
-    D_FF D1(q2,q1,clk,reset);
-    D_FF D2(q3,q2,clk,reset);
-    D_FF D3(q4,q3,clk,reset);
-    D_FF D4(q5,q4,clk,reset);
-    D_FF D5(q6,q5,clk,reset);
-    D_FF D6(q7,q6,clk,reset);
-    D_FF D7(q8,q7,clk,reset);
+module JohnsonCounter(q,clk,reset);
+    input clk;
+    input reset;
+    output [7:0] q;
+    D_FF D0(q[0],~q[7],clk,reset);
+    D_FF D1(q[1],q[0],clk,reset);
+    D_FF D2(q[2],q[1],clk,reset);
+    D_FF D3(q[3],q[2],clk,reset);
+    D_FF D4(q[4],q[3],clk,reset);
+    D_FF D5(q[5],q[4],clk,reset);
+    D_FF D6(q[6],q[5],clk,reset);
+    D_FF D7(q[7],q[6],clk,reset);
 endmodule;
-
-module Clock(clk);
-    output clk;
-    clk<=1'b0;
-    always @(*)
-        #5 clk<=~clk;
-endmodule;
-
 
 module D_FF(q,d,clk,reset);
     output q;
@@ -24,7 +18,7 @@ module D_FF(q,d,clk,reset);
     reg q;
     always @(posedge reset or negedge clk)
         if(reset)
-            q<=1'b0;
+            q=1'b0;
         else
-            q<=d;
+            q=d;
 endmodule;
