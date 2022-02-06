@@ -12,7 +12,11 @@
 
 ## Question 2: Johnson Counter
 
-> 'A2_Q2_Johnson_Counter.v' is the implementation of a 8-bit Johnson Counter. 
+> 'A2_Q2_Johnson_Counter.v' is the implementation of a 8-bit Johnson Counter.
+> <br>
+> We have implemented it with a clock of time period 10. Also, we have provided a 'reset' signal.
+> <br>
+> We have implemented the D Flip Flops to be sensitive to the positive edge of the clock and the reset signal.
 > <br>
 > 'A2_Q2_Johnson_Counter_tb.v' is the testbench.
 > <br>
