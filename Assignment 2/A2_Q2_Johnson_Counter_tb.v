@@ -10,11 +10,9 @@ module JohnsonCounter_tb;
   initial begin
       reset=1'b1;
       $monitor("%t q=%b, clock=%b, reset=%b",$time,q,clk,reset);
-      #10 reset=1'b0;
-      $monitor("%t q=%b, clock=%b, reset=%b",$time,q,clk,reset); 
-      #180 reset=1'b1;
-      $monitor("%t q=%b, clock=%b, reset=%b",$time,q,clk,reset); 
-      
+      #10 reset=1'b0; 
+      #180 reset=1'b1;  
+      #200 $finish;    
   end
 
   initial begin
@@ -22,7 +20,6 @@ module JohnsonCounter_tb;
     for(i=0;i<40;i=i+1) begin
       #5 clk=~clk;
     end
-    #5 $finish;
   end
 
 endmodule
