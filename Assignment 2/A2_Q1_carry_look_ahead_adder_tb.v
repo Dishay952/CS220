@@ -12,8 +12,8 @@ integer i;
 integer j;
 A2_Q1_carry_look_ahead_adder uut(C_out,S,A,B,C_in);
 initial begin
-    A<=4'b0;
-    B<=4'b0;
+    A<=8'b0;
+    B<=8'b0;
     C_in<=1'b0;
     #5;
     $monitor("%t A=%b, B=%b, Carry=%b, Sum=%b",$time,A,B,C_out,S);
