@@ -10,11 +10,15 @@ module JohnsonCounter_tb;
   initial begin
       reset=1'b1;
       $monitor("%t q=%b, clock=%b, reset=%b",$time,q,clk,reset);
+<<<<<<< Updated upstream
       #10 reset=1'b0;
       $monitor("%t q=%b, clock=%b, reset=%b",$time,q,clk,reset); 
       #180 reset=1'b1;
       $monitor("%t q=%b, clock=%b, reset=%b",$time,q,clk,reset); 
       
+=======
+      #165 $finish;
+>>>>>>> Stashed changes
   end
 
   initial begin
