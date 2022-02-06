@@ -5,8 +5,6 @@ reg [7:0] A;
 reg [7:0] B;
 reg C_in;
 wire [7:0] S;
-// wire [3:0] P;
-// wire [3:0] C;
 wire C_out;
 integer i;
 integer j;
@@ -26,7 +24,7 @@ initial begin
     end
 end
 initial begin
-    #77 $finish;
+    #80 $finish;
 end
 
 endmodule

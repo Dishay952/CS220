@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-`include  "Q2.v"
+`include  "A2_Q2_Johnson_Counter.v"
 module JohnsonCounter_tb;
   wire[7:0] q;
   reg clk;
@@ -10,15 +10,11 @@ module JohnsonCounter_tb;
   initial begin
       reset=1'b1;
       $monitor("%t q=%b, clock=%b, reset=%b",$time,q,clk,reset);
-<<<<<<< Updated upstream
       #10 reset=1'b0;
       $monitor("%t q=%b, clock=%b, reset=%b",$time,q,clk,reset); 
       #180 reset=1'b1;
       $monitor("%t q=%b, clock=%b, reset=%b",$time,q,clk,reset); 
       
-=======
-      #165 $finish;
->>>>>>> Stashed changes
   end
 
   initial begin
