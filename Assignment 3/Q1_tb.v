@@ -8,7 +8,7 @@ module Q1_tb;
   Q1 uut(op,ip,reset,clk);
 
   initial begin
-      clk=1'b0;
+      clk=1'b1;
       $monitor($time," Reset=%b Current Input=%b Output=%b",reset,ip,op);
       #100 $finish;
     end
@@ -34,6 +34,6 @@ module Q1_tb;
     #5 ip=1'b0;
     end
   always
-    #5   clk = ~  clk ;
+    #5  clk = ~  clk ;
 
 endmodule;
