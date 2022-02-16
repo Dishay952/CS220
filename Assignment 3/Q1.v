@@ -19,7 +19,7 @@ module Q1(op,ip,reset,clk);
     end
     always@(currState or ip) begin
         case (currState)
-            S0: begin 
+            S0: begin
                 if(ip == 1'b1) begin
                     nextState<=S1;
                     op=1'b0;

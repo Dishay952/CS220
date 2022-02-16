@@ -9,7 +9,7 @@ module Q1_tb;
 
   initial begin
       clk=1'b1;
-      $monitor($time," Reset=%b Current Input=%b Output=%b",reset,ip,op);
+      $monitor($time," Clock=%b Reset=%b Current Input=%b Output=%b",clk,reset,ip,op);
       #100 $finish;
     end
 
