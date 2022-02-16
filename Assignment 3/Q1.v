@@ -55,7 +55,7 @@ module Q1(op,ip,reset,clk);
                     op=1'b1;
                 end
                 else begin
-                    nextState=S0;
+                    nextState=S1;
                     op=1'b0;
                 end
             end
