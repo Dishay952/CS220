@@ -9,14 +9,14 @@ module Q1_tb;
 
   initial begin
       clk=1'b0;
-      $monitor($time," Reset =%b Current Input=%b Output=%b",reset,ip,op);
+      $monitor($time," Reset=%b Current Input=%b Output=%b",reset,ip,op);
       #100 $finish;
     end
 
   initial begin
     reset=1'b0;
     #5 ip=1'b0;
-    #5 ip=1'b0;
+    #5 ip=1'b1;
     #5 ip=1'b1;
     #5 ip=1'b0;
     #5 ip=1'b1;
