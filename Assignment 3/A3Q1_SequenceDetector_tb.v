@@ -1,11 +1,11 @@
 `timescale 1ns/1ns
-`include "Q1.v"
-module Q1_tb;
+`include "A3Q1_SequenceDetector.v"
+module SequenceDetector_tb;
 
   // Ports
   wire op;
   reg ip,clk,reset;
-  Q1 uut(op,ip,reset,clk);
+  SequenceDetector uut(op,ip,reset,clk);
 
   initial begin
       clk=1'b1;

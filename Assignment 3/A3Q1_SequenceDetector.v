@@ -1,6 +1,6 @@
 // Detect 1010 sequence with overlapping
 
-module Q1(op,ip,reset,clk);
+module SequenceDetector(op,ip,reset,clk);
     input ip, clk, reset;
     output reg op;
     reg [1:0] currState, nextState;
