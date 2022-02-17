@@ -1,9 +1,8 @@
-module odd_parity(clk,reset, ip,p,INPUT);
+module odd_parity(clk,reset, ip,p);
 input clk,reset, ip;
 output reg p;
 reg [2:0] curr_state;
 reg [2:0] next_state;
-output reg [2:0] INPUT;
 parameter A =3'b000;
 parameter B=3'b001;
 parameter C=3'b010;
@@ -22,9 +21,6 @@ end
 always@(curr_state or ip) begin
     case (curr_state)
         A: begin
-            INPUT[0]<=ip;
-            INPUT[2]<=1'bx;
-            INPUT[1]<=1'bx;
             if(ip == 1'b0) begin
                 next_state<=B;
                 p=1'bx;
@@ -35,7 +31,6 @@ always@(curr_state or ip) begin
             end
         end
         B: begin
-            INPUT[1]<=ip;
             if(ip == 1'b1) begin
                 next_state<=F;
                 p=1'bx;
@@ -46,7 +41,6 @@ always@(curr_state or ip) begin
             end
         end
         C: begin
-            INPUT[2]<=ip;
             if(ip == 1'b1) begin
                 next_state<=G;
                 p=1'b0;
@@ -58,9 +52,6 @@ always@(curr_state or ip) begin
 
         end
         D: begin
-            INPUT[0]<=ip;
-            INPUT[1]<=1'bx;
-            INPUT[2]<=1'bx;
             p=1'bx;
             if(ip == 1'b1) begin
                 next_state<=E;
@@ -71,7 +62,6 @@ always@(curr_state or ip) begin
 
         end
         E: begin
-            INPUT[1]<=ip;
             if(ip == 1'b1) begin
                 next_state<=C;
                 p=1'bx;
@@ -82,7 +72,6 @@ always@(curr_state or ip) begin
             end
         end
         F: begin
-            INPUT[2]<=ip;
             if(ip == 1'b1) begin
                 next_state<=D;
                 p=1'b1;
@@ -93,9 +82,6 @@ always@(curr_state or ip) begin
             end
         end
         G: begin
-            INPUT[0]<=ip;
-            INPUT[1]<=1'bx;
-            INPUT[2]<=1'bx;
             if(ip == 1'b1) begin
                 next_state<=E;
             end
@@ -110,5 +96,3 @@ always@(curr_state or ip) begin
     endcase
 end
 endmodule
-//D pe 0 fir B op 1, else E op 1
-// G pe 0 fir B op 0, else E op 0
