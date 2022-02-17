@@ -1,20 +1,43 @@
-`include "parity.v"
-`timescale 1ps/1ps
-
-module parity_tb;
-reg [3:0] A;
-wire p;
-parity uut(A,p);
-initial begin
-$dumpfile("parity_tb.vcd");
-$dumpvars(0,parity_tb);
-    #5;
-  $monitor("t=%t p=%b a=%b b=%b c=%b",$time,p,A[0],A[1],A[2]);
-end
-integer i;
-initial begin
-    for (i=0; i<8; i=i+1) begin
-        #5 A<=i;
+`timescale 1ns/1ns
+`include "odd_parity.v"
+module odd_parity_tb;
+  // Ports
+  wire p;
+  reg ip,clk,reset;
+  reg [2:0] curr_state;
+  wire [2:0] next_state;
+  odd_parity uut(clk,reset,ip,p);
+  initial begin
+      clk=1'b0;
+      #5;
+      $monitor($time," Clock=%b Reset=%b Input=%b Output=%b ",clk,reset,ip,p);
+      #15 $finish;
     end
-end
+    integer i;
+  initial begin
+    reset=1'b0;
+    #5;
+    ip=1'b0;
+    #5 
+    ip=1'b0;
+    #5 
+    ip=1'b0; ///000 should give parity bit output as one?
+    // #5 ip=1'b0;
+    // #5 ip=1'b1;
+    // #5 ip=1'b0;
+    // #5 ip=1'b1;
+    // #5 ip=1'b0;
+    // #5 ip=1'b1;
+    // #5 ip=1'b1;
+    // #5 ip=1'b0;
+    // #5 ip=1'b0;
+    // #5 ip=1'b1;
+    // #5 reset=1'b1;
+    // #5 ip=1'b0;
+    // #5 ip=1'b1;
+    // #5 ip=1'b0;
+    end
+  always
+     #5 clk= ~clk ;
+
 endmodule
