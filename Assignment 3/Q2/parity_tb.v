@@ -14,9 +14,10 @@ module odd_parity_tb;
     integer i;
   initial begin
     reset=1'b0;
+    ip=1'b0;
     #5 ip=1'b0;
     #5 ip=1'b0;
-    #5 ip=1'b1; //000 should give parity bit output as one
+    #5 ip=1'b1; //001 should give parity bit output as zero
     #5 ip=1'b1;
     #5 ip=1'b1;
     #5 ip=1'b0;//110 should give parity bit output as one
