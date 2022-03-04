@@ -4,7 +4,7 @@ module ThreeBitGreyCounter_tb;
   // reg reset;
   // reg out;
   wire [2:0] A;
-  wire count;
+  wire [2:0] count;
   reg reset,clock;
   wire out;
   ThreeBitGreyCounter uut(clock,reset,out,A,count);
@@ -12,9 +12,9 @@ module ThreeBitGreyCounter_tb;
     #5 clock=~clock;
   initial begin
         clock=1'b0;
-        #1;
-        $monitor($time," Input=%b Count=%b Grey_code=%b Output=%b",reset,count,A,out);
-        #120 $finish;
+        #5;
+        $monitor($time," Input=%b Count=%d Grey_code=%b Output=%b",reset,count,A,out);
+        #65 $finish;
   end
     initial begin
       reset=1'b0;
