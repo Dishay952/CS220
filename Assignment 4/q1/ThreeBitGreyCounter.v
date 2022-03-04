@@ -2,7 +2,7 @@ module ThreeBitGreyCounter(clock,reset,out,A,count);
 input reset,clock;
 output reg out;
 output reg [2:0] A;
-output reg count;
+output reg [2:0] count;
 reg [2:0] curr_state;
 reg [2:0] next_state;
 parameter S0=3'b000;
@@ -21,6 +21,7 @@ always@(posedge clock or negedge clock) begin
     end
     else begin
         curr_state<=next_state;
+        count<=count+1;
     end
 end
 always@(curr_state or clock) begin
