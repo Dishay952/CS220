@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-`include "A4Q1_GreyCounter.v"
+`include "A4Q1_GrayCounter.v"
 module ThreeBitGreyCounter_tb;
   // reg reset;
   // reg out;
