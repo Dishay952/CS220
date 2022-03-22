@@ -1,19 +1,17 @@
 .data
-        msg1: .asciiz "Enter p: "
-        msg2: .asciiz "Enter B line by line: "
-        msg3: .asciiz "The sum is "
-        msg4: .asciiz "Finish "
-        B: .space 40
-        Ltwo:   .byte 0x02  # 2 for mod usage
+        message1: .asciiz "Enter p: "
+        message2: .asciiz "Enter B line by line: "
+        message3: .asciiz "Enter Y line by line: "
+        message4: .asciiz "The Result is: "
+        X: .space 60
 
 .text
-lb $t3, Ltwo
 .globl main
 
         main: 
                 # message requesting p as input
                 li $v0, 4 
-                la $a0, msg1
+                la $a0, message1
                 syscall
 
                 # read p and store it in $t0
@@ -21,22 +19,22 @@ lb $t3, Ltwo
                 syscall
                 addi $t0 ,$v0, 0
 
-                # check if p == 0
+                # check if n == 0
                 beqz $t0, finish
                 
                 # load address of B in $t1
-                la $t1, B
-
+                la $t1, X 
+    
                 # setup counter in $s0
                 li $s0, 0
 
                 # message requesting B as input
                 li $v0, 4 
-                la $a0, msg2
+                la $a0, message2
                 syscall
         
-        B_in:         
-                # read element of B and store it as a floating point integer
+        X_in:         
+                # read element of B and store it
                 li $v0, 6
                 syscall 
                 swc1 $f0, 0($t1)
@@ -46,54 +44,72 @@ lb $t3, Ltwo
 
                 # increment counter and check for loop ending
                 addi $s0, $s0, 1
-                bne $s0, $t0, B_in
+                bne $s0, $t0, X_in
 
                 # reset counter in $s0 if loop is done
                 li $s0, 0
 
-        sum: 
+
+        Y_in:                 
+                
+                # reset pointers to B
+                la $t1, X
+                
+
+                # make accumulator f0 for total sum
+                li $t3, 0
+                mtc1 $t3, $f0
+
+                
+        dot_prod: 
                 # load floats
                 lwc1 $f1, 0($t1) # load from B
+                
+                li.s $f2, 1.0
+                li $t5, 2
+                div $s0,$t5
+                
+                bne $t4,$zero,else
+                mul.s $f1, $f1, $f2
+                add.s $f0, $f0, $f1
 
-                div $s0, $t3 # i mod 2
-                mfhi $t6 #stores 0 if $s0 is even and 1 if $s0 is odd
-                beq $t6,$zero,L1
-                addi $t2,$zero,1
-                beq $t6,$t2,L2
                 # increment pointers
                 addi $t1, $t1, 4
+                
 
                 # increment counter and check for loop ending
                 addi $s0, $s0, 1
-                bne $s0, $t0, sum
+                bne $s0, $t0, dot_prod
+                beq $s0,$t0,finish
 
-                # message for printing final output
+                
+        else:
+                li.s $f2, -1.0
+                # multiply and add to accumulator
+                mul.s $f1, $f1, $f2
+                add.s $f0, $f0, $f1
+
+                # increment pointers
+                addi $t1, $t1, 4
+               
+
+                # increment counter and check for loop ending
+                addi $s0, $s0, 1
+                bne $s0, $t0, dot_prod
+                beq $s0,$t0,finish
+
+               
+
+
+        finish: 
+
                 li $v0, 4
-                la $a0, msg3
+                la $a0, message4
                 syscall
-                # load a floating point value from memory
+
                 mov.s $f12, $f0
 
                 li $v0, 2
-                syscall
-
-                jr $ra
-
-        L1: 
-                li $t0,1
-                mtc1 $t0,$f2
-                mul.s $f1, $f1, $f2
-                add.s $f0, $f0, $f1
-        L2: 
-                li $t0,-1
-                mtc1 $t0,$f2
-                mul.s $f1, $f1, $f2
-                add.s $f0, $f0, $f1
-
-        finish: 
-                # message for printing p == 0
-                li $v0, 4
-                la $a0, msg4
                 syscall
 
                 jr $ra
