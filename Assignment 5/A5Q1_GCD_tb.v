@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-`include "q1.v"
+`include "A5Q1_GCD.v"
 module gcd_tb;
 reg [7:0] a;
 reg [7:0] b;

@@ -66,17 +66,15 @@
                 lwc1 $f1, 0($t1) # load from B
                 
                 li.s $f2, 1.0
-                li $t5, 2
-                div $s0,$t5
-                
+                andi $t4,$s0, 1
                 bne $t4,$zero,else
+                
                 mul.s $f1, $f1, $f2
                 add.s $f0, $f0, $f1
 
                 # increment pointers
                 addi $t1, $t1, 4
                 
-
                 # increment counter and check for loop ending
                 addi $s0, $s0, 1
                 bne $s0, $t0, dot_prod
