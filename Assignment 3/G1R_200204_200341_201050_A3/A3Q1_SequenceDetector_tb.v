@@ -35,5 +35,4 @@ module SequenceDetector_tb;
     end
   always
     #5  clk = ~  clk ;
-
 endmodule;
