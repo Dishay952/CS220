@@ -2,7 +2,6 @@
 `include  "A4Q2_EightBitAdderSubtractor.v"
 
 //In 2's complement notation, we can represent maximum -128 to 127 with 8 bits 
-
 module eight_bit_adder_subtractor_tb;
 reg [7:0] A;
 reg [7:0] B;
