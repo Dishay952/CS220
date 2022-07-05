@@ -21,5 +21,4 @@ module JohnsonCounter_tb;
       #5 clk=~clk;
     end
   end
-
 endmodule
