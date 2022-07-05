@@ -50,7 +50,6 @@ while: #while(j>=0 && arr[j]>key)
 ForExit: 
        jr $ra
     
-
 WhileExit:
      addi  $s1,$s1,4   # i=i+1*4 after the end of while loop
      addi $s4,$s3,4  #s4= j+1*4 after whileExit
@@ -71,4 +70,3 @@ PrintArr:
 ExitFinal:
     jr $ra
 
-   

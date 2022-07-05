@@ -34,6 +34,7 @@ fib:
     bgt     $a0, 1, fib_recurse
     move    $v0, $a0
     jr      $ra 
+    
 fib_recurse:
     addi    $sp, $sp, -12
     sw      $ra, 0($sp)
